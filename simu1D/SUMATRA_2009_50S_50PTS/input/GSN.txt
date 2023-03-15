@@ -1,0 +1,5 @@
+#name   network            latitude           longitude  useless      depth
+DRLN        CN             49.2562            -57.5032     589.0       0.0
+BMN        LB            40.4314            -117.220993     320.0      37.0
+BLOW        UW             44.6837            -122.1862     405.0       0.0
+      

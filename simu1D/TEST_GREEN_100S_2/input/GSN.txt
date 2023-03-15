@@ -1,0 +1,5 @@
+#name   network            latitude           longitude  useless      depth
+BFO        II             48.3319              8.3311     589.0       0.0
+CTAO        IU            -20.0882            146.2545     320.0      37.0
+MAJO        IU             36.5457            138.2041     405.0       0.0
+      

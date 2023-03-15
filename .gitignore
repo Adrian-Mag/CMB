@@ -1,0 +1,9 @@
+simu**/*/output
+meshes/
+stfs/
+stations/
+JOBS/
+real_sources/
+real_seismic_data/
+instaseis_data/
+cmb_models/
