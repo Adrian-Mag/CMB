@@ -9,5 +9,5 @@ cp axisem3d ./simu3D_CMB/
 
 # run
 cd simu3D_CMB
-mpirun -np 8 axisem3d
+mpirun -np 16 axisem3d
 cd ..

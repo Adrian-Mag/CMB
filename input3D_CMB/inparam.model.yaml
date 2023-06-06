@@ -15,7 +15,7 @@
 model1D:
     # what: Exodus mesh file created by salvus mesher
     # type: filename
-    exodus_mesh: global_mesh__prem_ani__25s.e
+    exodus_mesh: global_mesh__prem_ani__20s.e
 
 
 ############################# geodesy #############################
@@ -260,7 +260,7 @@ list_of_3D_models:
         # -------------------------------- #
         # what: NetCDF data file
         # type: filename
-        nc_data_file: CMB_geometric_20.nc
+        nc_data_file: cmb_topo_gaussian_70_0_23_30.nc
         # parameters for grid coordinates
         coordinates:
             # what: type of horizontal coordinates

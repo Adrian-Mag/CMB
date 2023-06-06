@@ -1,6 +1,6 @@
 import sys
-sys.path.append('/home/adrian/PhD/axisem3d_root/AxiSEM3D-master/cmb/output_handlers')
+sys.path.append('/home/users/scro4564/PhD/AxiSEM3D_Data_Handler')
 from obspyfy import obspyfy
 
-obspyfy('/home/adrian/PhD/axisem3d_root/AxiSEM3D-master/cmb/simu1D_element/TEST_ELEMENT_AT2', output_type='elements', 
-        stations_paths='/home/adrian/PhD/axisem3d_root/AxiSEM3D-master/cmb/stations/10DEG_GRID.txt')
+obspyfy('/home/users/scro4564/PhD/CMB/simu1D_element/FORWARD', output_type='elements', 
+        stations_paths='/home/users/scro4564/PhD/CMB/stations/STA_10DEG_CROSS.txt')                 

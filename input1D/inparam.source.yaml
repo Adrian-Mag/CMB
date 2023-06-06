@@ -16,7 +16,7 @@ time_axis:
     # what: record length (the end time in seismograms)
     # type: double
     # note: the start time depends on the source-time functions
-    record_length: 1800
+    record_length: 3600
 
     # what: user-specified Δt
     # type: string / double
@@ -51,18 +51,20 @@ time_axis:
 list_of_sources:
     - point1:
         location:
-            latitude_longitude: [0, 30]
-            depth: 0
+            latitude_longitude: [0, 0]
+            depth: 100e3
             ellipticity: false
             depth_below_solid_surface: true
             undulated_geometry: true
         mechanism:
             type: MOMENT_TENSOR
-            data: [1,0, 0, 0, 0, 0]
+            data: [1e21,1e21, 1e21, 0, 0, 0]
             unit: 1
         source_time_function:
             class_name: GaussianSTF
-            half_duration: 0
+            half_duration: 25
             decay_factor: 1.628
             time_shift: 0.000e+00
             use_derivative_integral: ERF
+            ascii_data_file: STF.txt
+            padding: FIRST_LAST

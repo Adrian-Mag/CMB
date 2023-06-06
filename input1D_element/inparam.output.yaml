@@ -45,7 +45,7 @@ list_of_element_groups:
             # type: array of double
             # note: 1) r-range for a spherical mesh
             #       2) z-range for a Cartesian mesh
-            vertical_range: [6300e3, 6371e3]
+            vertical_range: [3400e3, 6371e3]
         # in-plane sampling on each element
         inplane:
             # what: edge dimension
@@ -163,7 +163,7 @@ list_of_element_groups:
             #          writing time and decrease it to save memroy (useful for
             #          a large number of stations)
             #       2) this parameter does not affect the final results
-            buffer_size: 100
+            buffer_size: 100000
             # what: flush file after writing a buffer to it
             # type: bool
             # note: 1) pro: minimizes data loss in case of abnormal termination

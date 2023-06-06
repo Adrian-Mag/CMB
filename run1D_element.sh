@@ -20,5 +20,5 @@ cp axisem3d ./simu1D_element/$filename/
 
 # run
 cd simu1D_element/$filename
-mpirun -np 8 axisem3d
+mpirun -np 16 axisem3d
 cd ../..

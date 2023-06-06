@@ -24,7 +24,7 @@
 #       2) ANALYTICAL: analytical Nr(s,z) defined in NrFieldAnalytical.cpp
 #       3) POINTWISE:  Nr provided at discrete control points
 #       4) STRUCTURED: Nr provided on a structured grid
-type_Nr: CONSTANT
+type_Nr: ANALYTICAL
 
 # what: bound Nr(s,z) from above by inplane resolution
 # type: bool
@@ -61,11 +61,11 @@ analytical:
     depth_dependent_AxiSEM3D_default:
         # what: the control depths
         # type: array of double
-        control_depths: [0., 50e3, 100e3, 6371e3]
+        control_depths: [0., 2700e3, 3200e3, 6371e3]
 
         # what: Nr at the control depths
         # type: array of double
-        Nr_at_control_depths: [100, 100, 50, 50]
+        Nr_at_control_depths: [50, 100, 50, 50]
 
     # what: any user-defined parameters for NrFieldAnalytical.cpp
     # type: any
