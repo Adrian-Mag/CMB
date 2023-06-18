@@ -66,3 +66,5 @@ list_of_sources:
             decay_factor: 1.628
             time_shift: 0.000e+00
             use_derivative_integral: ERF
+            ascii_data_file: STF.txt
+            padding: FIRST_LAST
