@@ -51,12 +51,18 @@ time_axis:
 list_of_sources:
     - pointR:
         location:
+<<<<<<< HEAD
             latitude_longitude: [0, 20]
             depth: 0
+=======
+            latitude_longitude: [0, 0]
+            depth: 100000
+>>>>>>> 7153d719793b7148a0c4e4cacaeb7da08187d48d
             ellipticity: false
             depth_below_solid_surface: true
             undulated_geometry: true
         mechanism:
+<<<<<<< HEAD
             type: FORCE_VECTOR
             data: [1,0,0]
             unit: 1
@@ -95,3 +101,14 @@ list_of_sources:
             ascii_data_file: FORWARD_DATA_REAL_DATA.mseed/T.txt
             padding: FIRST_LAST
     
+=======
+            type: MOMENT_TENSOR
+            data: [1e21, 2e21, 3e21, 0, 0, 1e21]
+            unit: 1
+        source_time_function:
+            class_name: GaussianSTF
+            half_duration: 25
+            decay_factor: 1.628
+            time_shift: 0.000e+00
+            use_derivative_integral: ERF
+>>>>>>> 7153d719793b7148a0c4e4cacaeb7da08187d48d

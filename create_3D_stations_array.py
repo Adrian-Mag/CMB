@@ -22,12 +22,17 @@ def rand_sphere(R_min, R_max, samples):
     return points
 
 def uniform_sphere(R_min, R_max, samples):
+    # This function will avoid creating points that cannot be transformed 
+    # from spherical to cylindrical meaning that x!=0
     points = []
     # create square mesh with sides 2R
     X = np.linspace(-R_max, R_max, samples)
     Y = np.linspace(-R_max, R_max, samples)
     Z = np.linspace(-R_max, R_max, samples)
     for x in X:
+        if x < 1e-5:
+            # makes sure x is never zero
+            x += 1
         for y in Y:
             for z in Z:
                 r = np.sqrt(x**2 + y**2 + z**2)
@@ -58,11 +63,11 @@ else:
 ##########
 # PLOTTING
 ########## 
-
-# Define the lat lon grid for the spheres
-lat = np.arange(-90, 90.01, 1)*np.pi/180
-lon = np.arange(0, 180.01, 1)*np.pi/180
-LON, LAT = np.meshgrid(lon, lat)
+if PLOT is True:
+    # Define the lat lon grid for the spheres
+    lat = np.arange(-90, 90.01, 1)*np.pi/180
+    lon = np.arange(0, 180.01, 1)*np.pi/180
+    LON, LAT = np.meshgrid(lon, lat)
 
 # plot
 if PLOT is True:

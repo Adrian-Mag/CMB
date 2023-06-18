@@ -58,7 +58,11 @@ list_of_sources:
             undulated_geometry: true
         mechanism:
             type: MOMENT_TENSOR
+<<<<<<< HEAD
             data: [-1e21, 1e21, -1e21, 0, 0, 0]
+=======
+            data: [1e21, 0, -1e21, 1e21, 0, 1e21]
+>>>>>>> 7153d719793b7148a0c4e4cacaeb7da08187d48d
             unit: 1
         source_time_function:
             class_name: GaussianSTF

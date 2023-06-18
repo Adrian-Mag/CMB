@@ -45,7 +45,7 @@ list_of_element_groups:
             # type: array of double
             # note: 1) r-range for a spherical mesh
             #       2) z-range for a Cartesian mesh
-            vertical_range: [3400e3, 6371e3]
+            vertical_range: [5000e3, 6371e3]
         # in-plane sampling on each element
         inplane:
             # what: edge dimension
@@ -140,7 +140,7 @@ list_of_element_groups:
             #      3) (1, 2, 3) are determined by coordinate_frame
             #      4) using U means [U1, U2, U3], and similarly for G, E, S
             #         and R; duplicated channels are automatically removed
-            channels: [U]
+            channels: [U, G]
         # temporal sampling
         temporal:
             # what: sampling period
@@ -169,6 +169,6 @@ list_of_element_groups:
             # note: 1) pro: minimizes data loss in case of abnormal termination
             #          con: hits output performace if buffer_size is small
             #       2) this parameter does not affect the final results
-            flush: true
+            flush: false
                 #==========================================================================#
     
