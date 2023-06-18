@@ -15,6 +15,6 @@ do
     cp -r JOBS/$filename/* ./simu_JOBS/$filename/input/
     cp ./axisem3d ./simu_JOBS/$filename/
     cd simu_JOBS/$filename
-    mpirun -np 8 ./axisem3d
+    mpirun -np 16 ./axisem3d > LOGS_$filename.txt
     cd ../..
 done

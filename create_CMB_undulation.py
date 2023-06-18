@@ -22,7 +22,7 @@ nlon = 361
 nrow = nlat * nlon
 
 # read raw data
-txt_data = '/home/adrian/PhD/axisem3d_root/AxiSEM3D-master/cmb/cmb_models/cmb_topo_gaussian_7_CST.txt'
+txt_data = '/disks/data/PhD/CMB/cmb_models/cmb_topo_gaussian_5_0_30_30.txt'
 name = txt_data.split('/')[-1].split('.')[0]
 bnd = np.loadtxt(txt_data)
 bnd = bnd[:,2]

@@ -21,13 +21,14 @@ def analytical(LAT: np.ndarray, LON: np.ndarray) -> np.ndarray:
     Returns:
         np.ndarray: CMB topography at each lat lon grid point 
     """
-    sigma=0.057509
-    a = 7
-    print("Extent: ", 2*sigma*np.sqrt(np.log(10))*180/np.pi)
-    return a*np.exp(-0*((LAT*np.pi/180)**2 + ((LON - 23)*np.pi/180)**2)/(2*sigma**2))
+    extent = 30 # degrees
+    sigma=extent * np.pi / (360 * np.sqrt(np.log(10)))
+    a = 5
+    print("Extent: ", extent)
+    return a*np.exp(-((LAT*np.pi/180)**2 + ((LON - 23)*np.pi/180)**2)/(2*sigma**2))
 
 #give name
-name = 'cmb_topo_gaussian_7_CST.txt'
+name = 'cmb_topo_gaussian_5_0_30_30.txt'
 
 # Define the lat lon grid 
 lat = np.arange(-90, 90.01, 1)
@@ -36,9 +37,6 @@ LAT, LON = np.meshgrid(lat, lon)
 
 # Create topography data from analytical function
 cmb = analytical(LAT, LON)
-
-# Set very small values to zero
-#cmb[cmb<1e-6] = 0
 
 # Put together data
 a = np.zeros((len(LAT.flatten('F')), 3))

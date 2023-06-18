@@ -70,7 +70,7 @@ list_of_sources:
             # what: vertical location
             # type: double
             # note: the key can be "depth" or "radius" and the unit is meter
-            depth: 20e3
+            depth: 100e3
             # what: correct for ellipticity when locating the source
             # type: bool
             # note: used only when the key for horizontal location is
@@ -103,11 +103,11 @@ list_of_sources:
             #          order as in the CMTSOLUTION format (globalcmt.org)
             #       3) if horizontal location is given by "distance_azimuth",
             #          the RT-axes are determined w.r.t. the source (mesh axis)
-            data: [1e21, 1e21, 0, 1e21, 0, 0]
+            data: [-1e21, 1e21, -1e21, 0, 0, 0]
             # what: unit of data
             # type: double
             # note: use 1e-7 to convert dyn*cm (in CMTSOLUTION) to N*m
-            unit: 1e-7
+            unit: 1
         # source time function
         source_time_function:
             # what: class name
@@ -120,7 +120,7 @@ list_of_sources:
             # what: half duration
             # type: double
             # note: use 0 for a Dirac-δ to compute the Green's functions
-            half_duration: 25.
+            half_duration: 10.
             # what: decay factor
             # type: double
             # note: 1) this factor further controls the shape of the bell

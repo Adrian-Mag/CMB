@@ -24,7 +24,7 @@
 #       2) ANALYTICAL: analytical Nr(s,z) defined in NrFieldAnalytical.cpp
 #       3) POINTWISE:  Nr provided at discrete control points
 #       4) STRUCTURED: Nr provided on a structured grid
-type_Nr: ANALYTICAL
+type_Nr: CONSTANT
 
 # what: bound Nr(s,z) from above by inplane resolution
 # type: bool
@@ -61,11 +61,11 @@ analytical:
     depth_dependent_AxiSEM3D_default:
         # what: the control depths
         # type: array of double
-        control_depths: [0., 2700e3, 3050e3, 6371e3]
+        control_depths: [0., 3000e3, 3200e3, 6371e3]
 
         # what: Nr at the control depths
         # type: array of double
-        Nr_at_control_depths: [25, 150, 150, 5]
+        Nr_at_control_depths: [5, 7, 7, 5]
 
     # what: any user-defined parameters for NrFieldAnalytical.cpp
     # type: any
@@ -90,7 +90,7 @@ pointwise:
     #       3) interpolation is based on inverse distance weighting
     #       4) another variable starting_Nr_for_scanning will exist if
     #          this file has been created by wavefield scanning
-    nc_data_file: pointwise.nc
+    nc_data_file: scanning_output_Nr.nc
 
     # what: factor multiplied to Nr(s,z)
     # type: double

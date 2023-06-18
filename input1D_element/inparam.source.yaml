@@ -49,20 +49,49 @@ time_axis:
 # note: 1) multiple sources are allowed
 #       2) use [] if no source presents
 list_of_sources:
-    - point1:
+    - pointR:
         location:
-            latitude_longitude: [0, 0]
-            depth: 100e3
+            latitude_longitude: [0, 20]
+            depth: 0
             ellipticity: false
             depth_below_solid_surface: true
             undulated_geometry: true
         mechanism:
-            type: MOMENT_TENSOR
-            data: [1e21,1e21,1e21,0,0,0]
+            type: FORCE_VECTOR
+            data: [1,0,0]
             unit: 1
         source_time_function:
-            class_name: GaussianSTF
-            half_duration: 25
-            decay_factor: 1.628
-            time_shift: 0.000e+00
-            use_derivative_integral: ERF
+            class_name: StreamSTF
+            ascii_data_file: FORWARD_DATA_REAL_DATA.mseed/Z.txt
+            padding: FIRST_LAST
+    - pointT:
+        location:
+            latitude_longitude: [0, 20]
+            depth: 0
+            ellipticity: false
+            depth_below_solid_surface: true
+            undulated_geometry: true
+        mechanism:
+            type: FORCE_VECTOR
+            data: [0,1,0]
+            unit: 1
+        source_time_function:
+            class_name: StreamSTF
+            ascii_data_file: FORWARD_DATA_REAL_DATA.mseed/R.txt
+            padding: FIRST_LAST
+    - pointZ:
+        location:
+            latitude_longitude: [0, 20]
+            depth: 0
+            ellipticity: false
+            depth_below_solid_surface: true
+            undulated_geometry: true
+        mechanism:
+            type: FORCE_VECTOR
+            data: [0,0,1]
+            unit: 1
+        source_time_function:
+            class_name: StreamSTF
+            ascii_data_file: FORWARD_DATA_REAL_DATA.mseed/T.txt
+            padding: FIRST_LAST
+    

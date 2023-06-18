@@ -1,6 +1,6 @@
 import sys
 sys.path.append('/home/users/scro4564/PhD/AxiSEM3D_Data_Handler')
-from obspyfy import obspyfy
+from AxiSEM3D_Data_Handler.obspyfy import obspyfy
 
-obspyfy('/home/users/scro4564/PhD/CMB/simu1D_element/FORWARD', output_type='elements', 
-        stations_paths='/home/users/scro4564/PhD/CMB/stations/STA_10DEG_CROSS.txt')                 
+obspyfy('/disks/data/PhD/CMB/simu3D_CMB/NORMAL_FAULT_100KM_CMB_50_0_30_30', output_type='stations', 
+        stations_paths='/disks/data/PhD/CMB/stations/STA_10DEG_CROSS.txt')                 

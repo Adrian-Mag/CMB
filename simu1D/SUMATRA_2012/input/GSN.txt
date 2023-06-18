@@ -1,4 +1,0 @@
-#name   network            latitude           longitude  useless      depth
-HKPS   HK     22.277599     114.141502    0      0
-KIV    II     43.9562       42.6888       0      0
-HRV    IU     42.5064       -71.5583      0      0

@@ -33,7 +33,7 @@ list_of_station_groups:
             #          [useless] is for compatibility with SPECFEM and AxiSEM
             #       2) (x1, x2, x3) are specified by the next two options
             #       3) empty lines and comment lines (led by #) are allowed
-            station_file: STA_10DEG_CROSS.txt
+            station_file: STA_10DEG_GRID.txt
             # what: horizontal coordinates x1 and x2
             # type: string
             # only: LATITUDE_LONGITUDE / DISTANCE_AZIMUTH / XY_CARTESIAN
@@ -138,7 +138,7 @@ list_of_station_groups:
             #          writing time and decrease it to save memroy (useful for
             #          a large number of stations)
             #       2) this parameter does not affect the final results
-            buffer_size: 100000
+            buffer_size: 50000
             # what: flush file after writing a buffer to it
             # type: bool
             # note: 1) pro: minimizes data loss in case of abnormal termination

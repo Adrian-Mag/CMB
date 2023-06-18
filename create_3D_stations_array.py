@@ -41,10 +41,11 @@ def uniform_sphere(R_min, R_max, samples):
 ############
 file_name = '3D_UNIFORM_STA.txt'
 max_samples = 2000 # this is the no of samples on the biggest sphere
-samples = 15 # this is for the uniform one
+samples = 30 # this is for the uniform one
 R_min = 3481e3 
 R_max = 6371e3
 distribution_type = 'uniform'
+PLOT = False
 
 #######
 # SOLVE
@@ -63,26 +64,27 @@ lat = np.arange(-90, 90.01, 1)*np.pi/180
 lon = np.arange(0, 180.01, 1)*np.pi/180
 LON, LAT = np.meshgrid(lon, lat)
 
- # plot
-fig_earth = mlab.figure()
+# plot
+if PLOT is True:
+    fig_earth = mlab.figure()
 
-for R in [3471000, 6371000]:
-    # Construct CMB and Surface matrices
-    R_surface = R * np.ones(np.shape(LON))
+    for R in [3471000, 6371000]:
+        # Construct CMB and Surface matrices
+        R_surface = R * np.ones(np.shape(LON))
 
-    # Transform to cartesian coords
-    X_surface = R_surface * np.cos(LAT) * np.cos(LON)
-    Y_surface = R_surface * np.cos(LAT) * np.sin(LON)
-    Z_surface = R_surface * np.sin(LAT)
+        # Transform to cartesian coords
+        X_surface = R_surface * np.cos(LAT) * np.cos(LON)
+        Y_surface = R_surface * np.cos(LAT) * np.sin(LON)
+        Z_surface = R_surface * np.sin(LAT)
 
-    # Plot surface
-    mlab.mesh(X_surface, Y_surface, Z_surface, color=(0.2,0.2,0.2), opacity=0.1)    
+        # Plot surface
+        mlab.mesh(X_surface, Y_surface, Z_surface, color=(0.2,0.2,0.2), opacity=0.1)    
 
-# Plot points
-for point in points:
-    mlab.points3d(point[0], point[1], point[2], color=(1,1,1), scale_factor=1e5, opacity=1)
+    # Plot points
+    for point in points:
+        mlab.points3d(point[0], point[1], point[2], color=(1,1,1), scale_factor=1e5, opacity=1)
 
-mlab.show()
+    mlab.show()
 
 answer = input('Save it? (y/n): ')
 if answer == 'y' or 'yes':
