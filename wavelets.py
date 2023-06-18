@@ -10,10 +10,10 @@ from obspy.signal.tf_misfit import plot_tfr, plot_tf_misfits, tfpm
 
 
 # GET DATA 
-file1 = '/home/adrian/PhD/axisem3d_root/AxiSEM3D-master/cmb/simu1D/XC_20S_1D_PRO/output/obspyfied/XC_20S_1D_PRO.mseed'
-file2 = '/home/adrian/PhD/axisem3d_root/AxiSEM3D-master/cmb/simu1D_CMB/XC_20S_1D_CMB7_0_23_17/output/obspyfied/XC_20S_1D_CMB7_0_23_17.mseed'
-cat_path = '/home/adrian/PhD/axisem3d_root/AxiSEM3D-master/cmb/simu1D/XC_20S_1D_PRO/output/obspyfied/cat.xml'
-inv = read_inventory('/home/adrian/PhD/axisem3d_root/AxiSEM3D-master/cmb/simu1D_CMB/XC_20S_1D_CMB7_CST/output/obspyfied/10DEG_GRID_inv.xml')
+file1 = '/home/adrian/PhD/AxiSEM3D/CMB/simu1D/OBLIQUE_FAULT_100KM/output/obspyfied/OBLIQUE_FAULT_100KM.mseed'
+file2 = '/home/adrian/PhD/AxiSEM3D/CMB/SIMU_JOBS/OBLIQUE_FAULT_100KM_CMB_5_0_30_30/output/obspyfied/OBLIQUE_FAULT_100KM_CMB_5_0_30_30.mseed'
+cat_path = '/home/adrian/PhD/AxiSEM3D/CMB/SIMU_JOBS/OBLIQUE_FAULT_100KM_CMB_5_0_30_30/output/obspyfied/cat.xml'
+inv = read_inventory('/home/adrian/PhD/AxiSEM3D/CMB/SIMU_JOBS/OBLIQUE_FAULT_100KM_CMB_5_0_30_30/output/obspyfied/STA_10DEG_GRID_inv.xml')
 
 
 background_data = read(file1)
@@ -21,11 +21,11 @@ foreground_data = read(file2)
 catalogue = read_events(cat_path)
 
 network = 'A'
-station = '357'
+station = '354'
 location = ''
-channel = 'LXZ'
+channel = 'LXR'
 model = TauPyModel('prem')
-phase = "PcP"
+phase = "ScS"
 
 background_trace = background_data.select(network, station, location, channel)[0]
 foreground_trace = foreground_data.select(network, station, location, channel)[0]
@@ -34,7 +34,7 @@ foreground_trace = foreground_data.select(network, station, location, channel)[0
 #foreground_data.filter("bandpass", freqmin = 0.03333, freqmax = 0.05)
 inventory = inv.select(network=network, station=station, location=location, channel=channel)
 
-# Shift the 0 of the time axis to the evet time
+# Shift the 0 of the time axis to the event time
 evt_time = catalogue[0].origins[0].time
 start_time = background_trace.stats.starttime 
 time_shift = start_time - evt_time

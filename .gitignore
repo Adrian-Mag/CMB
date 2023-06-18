@@ -1,4 +1,5 @@
-simu**/*/output
+simu**/
+SIMU_JOBS/
 meshes/
 stfs/
 stations/
@@ -7,3 +8,4 @@ real_sources/
 real_seismic_data/
 instaseis_data/
 cmb_models/
+__pycache__

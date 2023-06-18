@@ -52,13 +52,13 @@ list_of_sources:
     - point1:
         location:
             latitude_longitude: [0, 0]
-            depth: 100e3
+            depth: 100000
             ellipticity: false
             depth_below_solid_surface: true
             undulated_geometry: true
         mechanism:
             type: MOMENT_TENSOR
-            data: [1e21,1e21,1e21,0,0,0]
+            data: [1e21, 2e21, 3e21, 0, 0, 1e21]
             unit: 1
         source_time_function:
             class_name: GaussianSTF
