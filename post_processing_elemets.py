@@ -55,7 +55,7 @@ def read_element_output(data_dir, load_wave_data=True):
         for nag in na_grid:
             dict_xda_list_element[nag].append(nc_file.data_vars['list_element__NaG=%d' % nag])
             dict_xda_data_wave[nag].append(nc_file.data_vars['data_wave__NaG=%d' % nag])
-            
+
     # concat xarray.DataArray
     xda_list_element_na = xr.concat(xda_list_element_na, dim='dim_element')
     xda_list_element_coords = xr.concat(xda_list_element_coords, dim='dim_element')
@@ -147,7 +147,7 @@ def get_waveform_xy(xy, na_grid, list_element_na, list_element_coords, dict_data
 
 
 # data dir
-data_dir = '/home/adrian/PhD/axisem3d_root/AxiSEM3D-master/examples/10_S362ANI_element_global/simu1D/NORMALS/output/elements/orthogonal_azimuthal_slices'
+data_dir = '/disks/data/PhD/CMB/simu1D_element/VIDEO/output/elements/entire_earth'
 
 # read
 na_grid, data_time, list_element_na, list_element_coords, \
@@ -161,7 +161,7 @@ wave_dim = 'RTZ'.index(wave_channel)
 ntime = len(data_time)
 
 # phi of the slices
-phi_slices = np.radians(np.arange(0, 360, 360))
+phi_slices = np.radians([0])
 nslice = len(phi_slices)
 
 # GLL coords on elements
@@ -203,7 +203,7 @@ for islice, phi in enumerate(phi_slices):
     # loop over elements to read wave data
     wave = np.ndarray((nelem * ngll, ntime))
     for ielem in np.arange(nelem):
-        wave[(ielem * ngll):(ielem * ngll + ngll), :] = dict_data_wave[nslice][ielem, islice, :, wave_dim, :]
+        wave[(ielem * ngll):(ielem * ngll + ngll), :] = dict_data_wave[5][ielem, islice, :, wave_dim, :]
         
     # loop over time to write vtk
     for itime in np.arange(ntime):
