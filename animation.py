@@ -17,6 +17,7 @@ station_loc = [6371000, 0, 30]
 R_max = 6371000
 R_min = 3400000
 N = 30
+channel = 0 # RTZ
 
 # Load data
 element_obj = element_output(element_output_path, grid_format)
