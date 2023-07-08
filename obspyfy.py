@@ -1,6 +1,6 @@
-from AxiSEM3D_Data_Handler.station_output import StationOutput
-from AxiSEM3D_Data_Handler.element_output import ElementOutput
+from axisem3d_output.core.handlers.station_output import StationOutput
+from axisem3d_output.core.handlers.element_output import ElementOutput
 
-path = '/disks/data/PhD/CMB/simu1D_element/FORWARD/output/elements/entire_earth'
-obj = ElementOutput(path_to_element_output=path)
-obj.obspyfy('/disks/data/PhD/CMB/input3D_CMB/STA_10DEG_GRID.txt')
+path = '/disks/data/PhD/CMB/simu3D_CMB/REAL_DATA/output/stations/Station_grid'
+obj = StationOutput(path)
+obj.obspyfy()

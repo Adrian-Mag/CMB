@@ -9,7 +9,7 @@ import multiprocessing as mp
 
 import sys
 sys.path.append('/disks/data/PhD/AxiSEM3D-Kernels')
-from AxiSEM3D_Data_Handler.element_output import element_output
+from axisem3d_output.element_output import element_output
 from AxiSEM3D_Kernels import sph2cart, cart2sph
 
 ############
