@@ -11,3 +11,4 @@ cmb_models/
 __pycache__
 input**/
 STFS/
+recipe/output
