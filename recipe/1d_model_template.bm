@@ -1,0 +1,7 @@
+NAME ATMeleonore
+ANELASTIC F
+ANISOTROPIC F
+UNITS km
+COLUMNS radius rho vp vs
+            0  1  5  3
+            1000 1 5 3
