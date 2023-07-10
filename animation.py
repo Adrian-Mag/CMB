@@ -9,7 +9,7 @@ import multiprocessing as mp
 
 import sys
 sys.path.append('/disks/data/PhD/AxiSEM3D-Kernels')
-from AxiSEM3D_Data_Handler.element_output import element_output
+from AxiSEM3D_Data_Handler.element_output import ElementOutput
 from AxiSEM3D_Kernels import sph2cart, cart2sph
 
 ############
@@ -53,7 +53,7 @@ def find_smallest_value(arr, percentage):
     return smallest_value   
 
 # Load data
-element_obj = element_output(element_output_path, grid_format)
+element_obj = ElementOutput(element_output_path)
 time = element_obj.data_time
 # Form vectors for the two points (Earth frame)
 point1 = sph2cart(source_loc[0], source_loc[1], source_loc[2])
